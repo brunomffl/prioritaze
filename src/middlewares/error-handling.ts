@@ -11,7 +11,7 @@ export function errorHandling(error: any, req: Request, res: Response, next: Nex
 
     if(error instanceof ZodError){
         return res.status(400).json({
-            message: "Validation error",
+            message: "Erro de validação. Verifique os dados inseridos.",
             issues: error.format()
         });
     };

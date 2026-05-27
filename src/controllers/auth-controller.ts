@@ -9,7 +9,9 @@ class AuthController {
     };
 
     async register(req: Request, res: Response) {
-        return res.status(200).json(await this.authService.register())
+        const { name, email, password } = req.body;
+        const user = { name, email, password };
+        return res.status(200).json(await this.authService.register(user));
     };
 
 };
