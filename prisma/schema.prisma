@@ -14,8 +14,14 @@ enum TicketPriority {
   CRITICAL
 }
 
+enum UserRole {
+  admin
+  user
+}
+
 model User {
   id        String   @id @default(uuid())
+  role      UserRole @default(user)
   name      String
   email     String   @unique
   password  String
